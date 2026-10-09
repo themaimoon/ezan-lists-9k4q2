@@ -79,8 +79,10 @@ function render(){
       acts = '<span class="no">no number on the list</span>';
     } else {
       acts = '<a class="wa" href="' + esc(wa(g)) + '">WhatsApp</a>';
-      if (TAB === "pending") acts += '<a class="form" href="' + esc(tally(g)) + '" target="_blank" rel="noopener">Form</a>';
     }
+    /* the Form button sits on every row: the family's own pre-filled form, used to
+       correct a headcount or flip an answer when they ask Yousuf privately. */
+    acts += '<a class="form" href="' + esc(tally(g)) + '" target="_blank" rel="noopener">Form</a>';
     return '<div class="card"><div class="name">' + esc(g.n) + '</div>'
          + '<div class="meta">' + metaLine(g, TAB) + '</div>'
          + '<div class="tel">' + esc(g.num || "no number on the list") + '</div>'
